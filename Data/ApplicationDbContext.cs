@@ -10,5 +10,5 @@ public class ApplicationDbContext : IdentityDbContext
     {}
             public DbSet<replicaPROGRAMA.Models.Contacto> DataContacto {get; set; }
             public DbSet<replicaPROGRAMA.Models.Producto> DataProducto {get; set; }
-    
+            public DbSet<replicaPROGRAMA.Models.Proforma> DataItemCarrito {get; set; }
 }
