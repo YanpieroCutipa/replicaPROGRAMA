@@ -9,5 +9,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {}
             public DbSet<replicaPROGRAMA.Models.Contacto> DataContacto {get; set; }
+            public DbSet<replicaPROGRAMA.Models.Producto> DataProducto {get; set; }
     
 }
