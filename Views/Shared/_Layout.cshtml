@@ -28,6 +28,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contactame</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
+                        </li> 
+                        <li class="nav-item">
+                            <form class="form-inline" asp-controller="Catalogo" asp-action="Index">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="searchString" placeholder="Buscar...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+
+
+
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
