@@ -11,7 +11,7 @@ using replicaPROGRAMA.Models;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace movieappauth.Controllers
+namespace replicaPROGRAMA.Controllers
 {
     public class CatalogoController : Controller
     {
