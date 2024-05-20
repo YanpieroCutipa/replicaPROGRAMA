@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using replicaPROGRAMA.Data;
 using replicaPROGRAMA.Models;
 using Microsoft.EntityFrameworkCore;
+using replicaPROGRAMA.Service;
 
 namespace replicaPROGRAMA.Controllers.Rest
 {
@@ -14,23 +15,31 @@ namespace replicaPROGRAMA.Controllers.Rest
     public class ProductoApiController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public ProductoApiController(ApplicationDbContext context)
+        private readonly ProductoService _productoService;
+
+        public ProductoApiController(ApplicationDbContext context,ProductoService productoService)
         {
             _context = context;
+            _productoService = productoService;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        //LISTA PRODUCTO
-        public async Task<ActionResult<List<Producto>>> List()
+        /*public async Task<ActionResult<List<Producto>>> List()
         {
             var productos = await _context.DataProducto.ToListAsync();
-             if(productos == null)
+            if(productos == null)
+                return NotFound();
+            return Ok(productos);
+        }*/
+        public async Task<ActionResult<List<Producto>>> List()
+        {
+            var productos = await _productoService.GetAll();
+            if(productos == null)
                 return NotFound();
             return Ok(productos);
         }
-
     }
 }
