@@ -12,16 +12,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        .bodyLogin {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+        .form-floating label {
+            color: #6c757d;
+        }
+        .btn-primary {
+            background-color: #4facfe;
+            border-color: #4facfe;
+        }
+        .btn-primary:hover {
+            background-color: #00f2fe;
+            border-color: #00f2fe;
+        }
+        .text-center a {
+            color: #00f2fe;
+        }
+    </style>
 </head>
 <body class="bodyLogin">
-    <div class="container mt-5">
-        <h1 class="display-6 fw-bold text-center">@ViewData["Title"]</h1>
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card shadow-sm">
+    <div class="container">
+        <h1 class="display-6 fw-bold text-center text-white">@ViewData["Title"]</h1>
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-5">
+                <div class="card shadow-lg">
                     <div class="card-body">
                         <form id="formulario" method="post">
-                            <h3 class="text-center">Ingrese sus datos</h3>
+                            <h3 class="text-center mb-4">Ingrese sus datos</h3>
                             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                             <div class="form-floating mb-3">
                                 <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="name@example.com" aria-required="true" />
